@@ -1,0 +1,6 @@
+framework module Pods_TechRange {
+  umbrella header "Pods-TechRange-umbrella.h"
+
+  export *
+  module * { export * }
+}

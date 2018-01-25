@@ -1,0 +1,6 @@
+framework module Pods_TechRangeUITests {
+  umbrella header "Pods-TechRangeUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
