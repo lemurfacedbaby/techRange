@@ -21,6 +21,9 @@ class ZoneQueue: NSObject {
                 closestZone = zone
             }
         }
+        if closestZone == 6 {
+            closestZone = -1
+        }
         return closestZone
     }
 }

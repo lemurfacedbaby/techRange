@@ -18,30 +18,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BeaconImage" translatesAutoresizingMaskIntoConstraints="NO" id="CEv-jg-iif">
-                                <rect key="frame" x="67" y="214" width="240" height="239"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="BeaconImage" translatesAutoresizingMaskIntoConstraints="NO" id="CEv-jg-iif">
+                                <rect key="frame" x="94" y="203" width="186" height="251"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="???" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="w9E-EW-koi">
-                                <rect key="frame" x="166" y="293" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Make-a-thon" translatesAutoresizingMaskIntoConstraints="NO" id="qxy-EO-Box">
+                                <rect key="frame" x="42" y="20" width="308" height="158"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Range" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GOd-PA-WyZ">
+                                <rect key="frame" x="126" y="502" width="123" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="7I4-0r-Vpp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="CEv-jg-iif" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2vk-Xz-1sZ"/>
-                            <constraint firstItem="w9E-EW-koi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="273" id="Ozw-20-tJc"/>
-                            <constraint firstItem="w9E-EW-koi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="166" id="Ug8-DQ-uHB"/>
-                            <constraint firstItem="w9E-EW-koi" firstAttribute="centerX" secondItem="CEv-jg-iif" secondAttribute="centerX" id="aLh-Rq-mhm"/>
-                            <constraint firstItem="CEv-jg-iif" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="194" id="ges-SD-ToC"/>
-                            <constraint firstItem="CEv-jg-iif" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="jZS-VP-ea6"/>
-                            <constraint firstItem="CEv-jg-iif" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="67" id="mrU-mF-a10"/>
+                            <constraint firstItem="GOd-PA-WyZ" firstAttribute="top" secondItem="CEv-jg-iif" secondAttribute="bottom" constant="48" id="3Mq-F9-4Xl"/>
+                            <constraint firstItem="qxy-EO-Box" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="AIh-WH-I1r"/>
+                            <constraint firstItem="GOd-PA-WyZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="126" id="BHa-Ce-57b"/>
+                            <constraint firstItem="CEv-jg-iif" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IuF-oJ-PC3"/>
+                            <constraint firstItem="CEv-jg-iif" firstAttribute="centerX" secondItem="GOd-PA-WyZ" secondAttribute="centerX" id="LhA-sa-cqh"/>
+                            <constraint firstItem="qxy-EO-Box" firstAttribute="leading" secondItem="CEv-jg-iif" secondAttribute="leading" constant="-52" id="OgO-24-Wqs"/>
+                            <constraint firstItem="CEv-jg-iif" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="183" id="SPE-44-3MD"/>
+                            <constraint firstItem="CEv-jg-iif" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="94" id="y1U-uO-FvL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="distanceLabel" destination="w9E-EW-koi" id="Hvo-f8-age"/>
+                        <outlet property="distanceLabel" destination="GOd-PA-WyZ" id="IoU-PX-lOa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -51,5 +57,6 @@
     </scenes>
     <resources>
         <image name="BeaconImage" width="231" height="300"/>
+        <image name="Make-a-thon" width="960" height="540"/>
     </resources>
 </document>

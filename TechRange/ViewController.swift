@@ -19,10 +19,10 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.zoneQueue = ZoneQueue()
         let credentials = EPXCloudCredentials(appID: "techrange-gao", appToken: "56915cc13a07ed021ff565408ea247d9")
         self.proximityObserver = EPXProximityObserver(credentials: credentials, errorBlock: { error in
             print("Oops! \(error)")
-        self.zoneQueue = ZoneQueue()
         })
         getRangedZones()
         
@@ -45,6 +45,7 @@ class ViewController: UIViewController {
         
         pointOneZone.onExitAction = { attachment in
             self.zoneQueue.zoneState[0.1] = false
+            self.setLabel()
         }
         
         let pointFiveZone = EPXProximityZone(range: EPXProximityRange.custom(desiredMeanTriggerDistance: 0.5)!,
@@ -58,6 +59,7 @@ class ViewController: UIViewController {
         
         pointFiveZone.onExitAction = { attachment in
             self.zoneQueue.zoneState[0.5] = false
+            self.setLabel()
         }
         
         let oneZone = EPXProximityZone(range: EPXProximityRange.custom(desiredMeanTriggerDistance: 1.0)!,
@@ -70,6 +72,7 @@ class ViewController: UIViewController {
         
         oneZone.onExitAction = { attachment in
             self.zoneQueue.zoneState[1.0] = false
+            self.setLabel()
         }
         
         let onePointFiveZone = EPXProximityZone(range: EPXProximityRange.custom(desiredMeanTriggerDistance: 1.5)!,
@@ -82,6 +85,7 @@ class ViewController: UIViewController {
         
         onePointFiveZone.onExitAction = { attachment in
             self.zoneQueue.zoneState[1.5] = false
+            self.setLabel()
         }
         
         let twoZone = EPXProximityZone(range: EPXProximityRange.custom(desiredMeanTriggerDistance: 2.0)!,
@@ -94,6 +98,7 @@ class ViewController: UIViewController {
         
         twoZone.onExitAction = { attachment in
             self.zoneQueue.zoneState[2.0] = false
+            self.setLabel()
         }
         
         let threeZone = EPXProximityZone(range: EPXProximityRange.custom(desiredMeanTriggerDistance: 3.0)!,
@@ -105,7 +110,8 @@ class ViewController: UIViewController {
         }
         
         threeZone.onExitAction = { attachment in
-           self.zoneQueue.zoneState[3.0] = false
+            self.zoneQueue.zoneState[3.0] = false
+            self.setLabel()
         }
         
         self.proximityObserver.startObserving([pointOneZone, onePointFiveZone, oneZone, onePointFiveZone, twoZone, threeZone])
@@ -113,7 +119,11 @@ class ViewController: UIViewController {
     }
     
     func setLabel() {
-        distanceLabel.text = "\(zoneQueue.closestZone())"
+        let zone = zoneQueue.closestZone()
+        if zone == -1 {
+            distanceLabel.text = "Out of Range"
+        }
+        distanceLabel.text = "\(zoneQueue.closestZone()) meters"
     }
 
 
