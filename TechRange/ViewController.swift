@@ -37,7 +37,7 @@ class ViewController: UIViewController {
         
         let pointOneZone = EPXProximityZone(range: EPXProximityRange.custom(desiredMeanTriggerDistance: 0.1)!,
                                              attachmentKey: "desk",
-                                             attachmentValue: "ice")
+                                             attachmentValue: "mint")
         pointOneZone.onEnterAction = { attachment in
             self.zoneQueue.zoneState[0.1] = true
             self.setLabel()
@@ -50,7 +50,7 @@ class ViewController: UIViewController {
         
         let pointFiveZone = EPXProximityZone(range: EPXProximityRange.custom(desiredMeanTriggerDistance: 0.5)!,
                                             attachmentKey: "desk",
-                                            attachmentValue: "ice")
+                                            attachmentValue: "mint")
         
         pointFiveZone.onEnterAction = { attachment in
             self.zoneQueue.zoneState[0.5] = true
@@ -64,7 +64,7 @@ class ViewController: UIViewController {
         
         let oneZone = EPXProximityZone(range: EPXProximityRange.custom(desiredMeanTriggerDistance: 1.0)!,
                                              attachmentKey: "desk",
-                                             attachmentValue: "ice")
+                                             attachmentValue: "mint")
         oneZone.onEnterAction = { attachment in
             self.zoneQueue.zoneState[1.0] = true
             self.setLabel()
@@ -77,7 +77,7 @@ class ViewController: UIViewController {
         
         let onePointFiveZone = EPXProximityZone(range: EPXProximityRange.custom(desiredMeanTriggerDistance: 1.5)!,
                                              attachmentKey: "desk",
-                                             attachmentValue: "ice")
+                                             attachmentValue: "mint")
         onePointFiveZone.onEnterAction = { attachment in
             self.zoneQueue.zoneState[1.5] = true
             self.setLabel()
@@ -90,7 +90,7 @@ class ViewController: UIViewController {
         
         let twoZone = EPXProximityZone(range: EPXProximityRange.custom(desiredMeanTriggerDistance: 2.0)!,
                                                 attachmentKey: "desk",
-                                                attachmentValue: "ice")
+                                                attachmentValue: "mint")
         twoZone.onEnterAction = { attachment in
             self.zoneQueue.zoneState[2.0] = true
             self.setLabel()
@@ -103,7 +103,7 @@ class ViewController: UIViewController {
         
         let threeZone = EPXProximityZone(range: EPXProximityRange.custom(desiredMeanTriggerDistance: 3.0)!,
                                                 attachmentKey: "desk",
-                                                attachmentValue: "ice")
+                                                attachmentValue: "mint")
         threeZone.onEnterAction = { attachment in
             self.zoneQueue.zoneState[3.0] = true
             self.setLabel()
@@ -114,7 +114,33 @@ class ViewController: UIViewController {
             self.setLabel()
         }
         
-        self.proximityObserver.startObserving([pointOneZone, onePointFiveZone, oneZone, onePointFiveZone, twoZone, threeZone])
+        let fourZone = EPXProximityZone(range: EPXProximityRange.custom(desiredMeanTriggerDistance: 4.0)!,
+                                         attachmentKey: "desk",
+                                         attachmentValue: "mint")
+        fourZone.onEnterAction = { attachment in
+            self.zoneQueue.zoneState[4.0] = true
+            self.setLabel()
+        }
+        
+        fourZone.onExitAction = { attachment in
+            self.zoneQueue.zoneState[4.0] = false
+            self.setLabel()
+        }
+
+        let fiveZone = EPXProximityZone(range: EPXProximityRange.custom(desiredMeanTriggerDistance: 5.0)!,
+                                                attachmentKey: "desk",
+                                                attachmentValue: "mint")
+        fiveZone.onEnterAction = { attachment in
+            self.zoneQueue.zoneState[5.0] = true
+            self.setLabel()
+        }
+        
+        fiveZone.onExitAction = { attachment in
+            self.zoneQueue.zoneState[5.0] = false
+            self.setLabel()
+        }
+        
+        self.proximityObserver.startObserving([pointOneZone, pointFiveZone, oneZone, onePointFiveZone, twoZone, threeZone, fourZone, fiveZone])
         
     }
     
@@ -122,8 +148,9 @@ class ViewController: UIViewController {
         let zone = zoneQueue.closestZone()
         if zone == -1 {
             distanceLabel.text = "Out of Range"
+        } else {
+            distanceLabel.text = "\(zoneQueue.closestZone()) meters"
         }
-        distanceLabel.text = "\(zoneQueue.closestZone()) meters"
     }
 
 

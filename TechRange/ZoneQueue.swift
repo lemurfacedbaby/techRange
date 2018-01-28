@@ -11,8 +11,8 @@ import Foundation
 class ZoneQueue: NSObject {
     
 
-    var numberOfZones: Double = 6.0
-    var zoneState: [Double: Bool] = [ 0.1 : false, 0.5: false, 1.0: false, 1.5: false, 2.0: false, 3.0: false]
+    var numberOfZones: Double = 8.0
+    var zoneState: [Double: Bool] = [ 0.1 : false, 0.5: false, 1.0: false, 1.5: false, 2.0: false, 3.0: false, 4.0: false, 5.0: false]
     
     func closestZone() -> Double {
         var closestZone: Double = numberOfZones
@@ -21,7 +21,7 @@ class ZoneQueue: NSObject {
                 closestZone = zone
             }
         }
-        if closestZone == 6 {
+        if closestZone == 8.0 {
             closestZone = -1
         }
         return closestZone

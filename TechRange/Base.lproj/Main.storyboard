@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,35 +15,37 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TechRange" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" opaque="NO" alpha="0.94999999999999996" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="BeaconImage" translatesAutoresizingMaskIntoConstraints="NO" id="CEv-jg-iif">
-                                <rect key="frame" x="94" y="203" width="186" height="251"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Make-a-thon" translatesAutoresizingMaskIntoConstraints="NO" id="qxy-EO-Box">
-                                <rect key="frame" x="42" y="20" width="308" height="158"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Range" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GOd-PA-WyZ">
-                                <rect key="frame" x="126" y="502" width="123" height="52"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="52" id="7I4-0r-Vpp"/>
-                                </constraints>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Range" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GOd-PA-WyZ">
+                                <rect key="frame" x="155" y="587" width="51" height="21"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Make-a-thon" translatesAutoresizingMaskIntoConstraints="NO" id="qxy-EO-Box">
+                                <rect key="frame" x="34" y="20" width="325" height="174"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="174" id="oqw-lO-UBd"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="BeaconImage" translatesAutoresizingMaskIntoConstraints="NO" id="CEv-jg-iif">
+                                <rect key="frame" x="92" y="255" width="177" height="235"/>
+                            </imageView>
                         </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="GOd-PA-WyZ" firstAttribute="top" secondItem="CEv-jg-iif" secondAttribute="bottom" constant="48" id="3Mq-F9-4Xl"/>
-                            <constraint firstItem="qxy-EO-Box" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="AIh-WH-I1r"/>
-                            <constraint firstItem="GOd-PA-WyZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="126" id="BHa-Ce-57b"/>
-                            <constraint firstItem="CEv-jg-iif" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IuF-oJ-PC3"/>
-                            <constraint firstItem="CEv-jg-iif" firstAttribute="centerX" secondItem="GOd-PA-WyZ" secondAttribute="centerX" id="LhA-sa-cqh"/>
-                            <constraint firstItem="qxy-EO-Box" firstAttribute="leading" secondItem="CEv-jg-iif" secondAttribute="leading" constant="-52" id="OgO-24-Wqs"/>
-                            <constraint firstItem="CEv-jg-iif" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="183" id="SPE-44-3MD"/>
-                            <constraint firstItem="CEv-jg-iif" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="94" id="y1U-uO-FvL"/>
+                            <constraint firstItem="qxy-EO-Box" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="2VN-CU-Fww"/>
+                            <constraint firstItem="qxy-EO-Box" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="NMR-8a-PJI"/>
+                            <constraint firstItem="CEv-jg-iif" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="92" id="Qzy-jV-uSf"/>
+                            <constraint firstItem="qxy-EO-Box" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="34" id="RNG-Yj-5qO"/>
+                            <constraint firstItem="CEv-jg-iif" firstAttribute="top" secondItem="qxy-EO-Box" secondAttribute="bottom" constant="61" id="WWx-ea-nmM"/>
+                            <constraint firstItem="CEv-jg-iif" firstAttribute="centerX" secondItem="GOd-PA-WyZ" secondAttribute="centerX" id="adt-3l-VF1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CEv-jg-iif" secondAttribute="trailing" constant="106" id="dWX-Df-gfz"/>
+                            <constraint firstItem="GOd-PA-WyZ" firstAttribute="top" secondItem="CEv-jg-iif" secondAttribute="bottom" constant="97" id="eEF-uF-PF0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="GOd-PA-WyZ" secondAttribute="bottom" constant="59" id="gaq-DL-DEd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -52,7 +55,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+            <point key="canvasLocation" x="134.78260869565219" y="132.88043478260872"/>
         </scene>
     </scenes>
     <resources>
